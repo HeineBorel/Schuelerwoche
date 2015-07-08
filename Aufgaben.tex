@@ -1,0 +1,107 @@
+\documentclass[a4paper,10pt]{article}
+
+\usepackage{mystyle}
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{mathrsfs} %Für das curly L der linearen Operatoren
+\usepackage{empheq}
+
+
+\begin{document}
+
+\begin{Aufg}
+ In der Vorlesung wurde definiert was ein Abstandmaß ist:
+ \begin{enumerate}[(i)]
+  \item $d(x, y) \geq 0 $ und $d(x,y) =0$ genau dann, wenn $x=y$
+  \item $d(x,y) = d(y,x)$
+  \item $d(x,y) \leq d(x,z) + d(z,y)$ ``Dreiecksungleichung''
+ \end{enumerate}
+ 
+ Wir wollen nun nachrechnen ob es überhaupt solche Abbildungen gibt,
+ oder ob wir schon solche Abbildungen kennen. 
+ \begin{enumerate}
+  \item Prüfe ob die Abbildung $(x,y) \mapsto |x-y|$ ein Abstandmaß auf $\R$ ist.
+  \item Auf $\R^2$ definiert man $|(x_1, x_2)| \coloneqq \sqrt{x_1 ^2 + x_2 ^2}$.
+	Ist dann die Abbildung $(x,y) \mapsto |x-y|$ ein Abstandmaß auf $\R^2$?
+  \item Betrachte folgende Abbildung $\Phi$ auf $\R$ 
+  \begin{gather*}
+   r\mapsto \begin{cases}
+            1  \text{ wenn } r=0 \\
+            0  \text{ wenn } r\neq0.
+            \end{cases}
+  \end{gather*}
+ Zeige, dass die Abbildung $(x,y) \mapsto \Phi(x-y)$ ein Abstandmaß auf $\R$ definiert. 
+ Dieses Maß ist das sogenannte diskrete Maß.
+  
+ \end{enumerate}
+
+\end{Aufg}
+ 
+\begin{Aufg}
+Sei $d(x,y)$ ein Abstandmaß auf $\R$. Zeige, dass die Abbildung
+ $(x,y) \mapsto \frac{d(x,y)}{1 + d(x,y)}$ ein Abstandmaß ist.
+\end{Aufg}
+
+
+\begin{Aufg}
+Im Beweis des Banachschen Fixpunktsatzes wurde eine Formel über die geometrische Reihe
+benutzt. Wir wollen diese Aussage beweisen.
+
+Eine geometrische Reihe ist eine Summe der Form $\sum_{k=0}^N p^k$. Sei nun \linebreak $0<p<1$.
+Zeige, dass $\sum_{k=0}^N p^k=  \frac{1- p^{N+1}}{1 - p}$.
+
+Betrachte dazu die Ausdrücke 
+\begin{gather*}
+ \sum_{k=0}^N p^k= s = 1 + p + p^2 + p^3 + \dots + p^N, \text{ und }\\
+ ps =p +p^2 +p^3 + p^4 + \dots + p^{N+1}.
+\end{gather*}
+
+Falls nun $N$ gegen $\infty$ geht, so konvergiert der Term $\frac{1- p^{N+1}}{1 - p}$
+gegen $\frac{1}{1 - p}$, also $\sum_{k=0}^\infty p^k=  \frac{1}{1 - p}$.
+Warum ist die Annahme $0<p<1$ wichtig? Würde die Formel in diesen Fällen Sinn ergeben?
+\end{Aufg}
+
+
+\begin{Aufg}
+
+Nun wollen wir ein Beispiel für eine Fixpunktiteration betrachten, das sogenannte
+Newton-Verfahren. Sei dazu $f:\R \to \R$
+eine zweimal stetig differenzierbare Funktion mit einer Nullstelle $\alpha$, also $f(\alpha) =0$,
+sodass die Ableitung bei $x_0$ nicht gleich 0 ist. Dann definieren wir die iterierte Folge,
+\[
+ x_{n+1} = x_n - \frac{f(x_n)}{f'(x_n)}, 
+\]
+mit einem Startwert $x_0$. Um die Rechnungen zu vereinfachen, nehmen wir an, dass $x_0$ nahe bei
+der Nullstelle ist, das heißt $|x_0 - \alpha|<1$. 
+Weiter können wir $f$ gut durch seine Ableitung annähern:
+\[
+ f(a) = f(x_n) + f'(x_n)(a-x_n) + C(a-x_n)^2 \text{ für ein } C \in \R.
+\]
+
+Um zu beweisen, dass die Folge $x_n$ gegen $\alpha$ konvergiert, betrachte die vorherige
+Gleichung mit $a = \alpha$. Dann benutze, dass $f'(x_n) \neq0$, und die Definition der
+Folge $x_n$. Finde damit eine iterative Formel für die Folge des Abstands zu der Nullstelle
+\[
+ \epsilon_n \coloneqq \alpha - x_{n}.
+\]
+Benutze nun, dass $|x_0 - \alpha|<1$ und damit $\epsilon_n$ gegen 0 konvergiert. Damit konvergiert
+$x_n$ gegen $\alpha$.
+
+\end{Aufg}
+
+
+\begin{Aufg}
+Nimm zwei Blatt Papier und lege sie aufeinander. Wir wollen eigentlich eine Selbstabbildung
+eines Blatts auf sich selbst betrachten, doch ist es einfacher dafür ein zweites Blatt herzunehmen.
+Zerknülle nun das oberere Blatt und lege den Papierball wieder auf das andere Blatt. Nun drücke den 
+Ball flach auf das untere Blatt. Jetzt haben wir eine (Selbst)Abbildung eines Blattes auf sich selbst.
+Hat diese Abbildung einen Fixpunkt? Ist diese Abbildung eine Kontraktion?
+ 
+\end{Aufg}
+\begin{Aufg}
+ 
+ 
+\end{Aufg}
+
+\end{document}
+
