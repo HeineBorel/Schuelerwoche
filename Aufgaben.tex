@@ -10,7 +10,7 @@
 \begin{document}
 
 \begin{Aufg}
- In der Vorlesung wurde definiert was ein Abstandmaß ist:
+ In der Vorlesung wurde definiert was ein Abstandmaß oder Metrik ist:
  \begin{enumerate}[(i)]
   \item $d(x, y) \geq 0 $ und $d(x,y) =0$ genau dann, wenn $x=y$
   \item $d(x,y) = d(y,x)$
@@ -23,22 +23,23 @@
   \item Prüfe ob die Abbildung $(x,y) \mapsto |x-y|$ ein Abstandmaß auf $\R$ ist.
   \item Auf $\R^2$ definiert man $|(x_1, x_2)| \coloneqq \sqrt{x_1 ^2 + x_2 ^2}$.
 	Ist dann die Abbildung $(x,y) \mapsto |x-y|$ ein Abstandmaß auf $\R^2$?
-  \item Betrachte folgende Abbildung $\Phi$ auf $\R$ 
+  \item Nun wollen wir eine Metrik auf beliebigen Mengen definieren. Sei dazu $X$
+	eine Menge. Definiere $\Phi$ durch
   \begin{gather*}
-   r\mapsto \begin{cases}
-            1  \text{ wenn } r=0 \\
-            0  \text{ wenn } r\neq0.
+   (a,b)\mapsto \begin{cases}
+            1  \text{ wenn } a=b \\
+            0  \text{ wenn } a\neq b.
             \end{cases}
   \end{gather*}
- Zeige, dass die Abbildung $(x,y) \mapsto \Phi(x-y)$ ein Abstandmaß auf $\R$ definiert. 
- Dieses Maß ist das sogenannte diskrete Maß.
+ Zeige, dass die Abbildung $(a,b) \mapsto \Phi(a,b)$ ein Abstandmaß auf $X$ definiert. 
+ Diese Metrik ist die sogenannte diskrete Metrik.
   
  \end{enumerate}
 
 \end{Aufg}
  
 \begin{Aufg}
-Sei $d(x,y)$ ein Abstandmaß auf $\R$. Zeige, dass die Abbildung
+Sei $d(x,y)$ ein Abstandmaß auf einer Menge $X$. Zeige, dass die Abbildung
  $(x,y) \mapsto \frac{d(x,y)}{1 + d(x,y)}$ ein Abstandmaß ist.
 \end{Aufg}
 
@@ -60,6 +61,51 @@ Falls nun $N$ gegen $\infty$ geht, so konvergiert der Term $\frac{1- p^{N+1}}{1 
 gegen $\frac{1}{1 - p}$, also $\sum_{k=0}^\infty p^k=  \frac{1}{1 - p}$.
 Warum ist die Annahme $0<p<1$ wichtig? Würde die Formel in diesen Fällen Sinn ergeben?
 \end{Aufg}
+
+
+\begin{Aufg}
+ Sei $g:\R \to \R$ beliebig oft differenzierbar mit $g(\alpha) = \alpha$, und
+ $|g'(\alpha)| <1$. 
+ 
+ Zeige, dass es ein $\epsilon > 0$ sodass $g$ das Intervall 
+ $I=\left[ \alpha - \epsilon , \alpha + \epsilon \right]$ auf sich selbst abbildet, d.h. 
+ $g(x)$ ist ein Element von $I$ falls $x$ ein Element von $I$ war.
+ 
+ Beweise nun, dass es ein $0<L<1$ gibt, so dass
+ \[
+  |g(x) - g(y)| \leq L|x-y|, \text{ f"ur alle } x,y \text{ in } I.
+ \]
+
+ Folgere nun, dass die Folge $x_{n+1} = g(x_n)$ f"ur $x_0$ in $I$ gegen $\alpha$
+ konvergiert.
+
+\end{Aufg}
+
+
+\begin{Aufg}
+ Sei $f: \R \to \R$ eine beliebig differenzierbare Funktion, und $\alpha$ eine Nullstelle von $f$,
+ mit $f'(\alpha) \neq 0$.
+ \begin{enumerate}[(a)]
+  \item Zeige: $\alpha$ ist ein Fixpunkt der Funktion $g(x)= x - \frac{f(x)}{f'(x)}$.
+  \item Beweise, dass ein $\epsilon > 0$ und $0<L<1$ existiert, so dass $g$ Lipschitz 
+  mit Konstante $L$ auf 
+  $I=\left[ \alpha - \epsilon , \alpha + \epsilon \right]$ ist, d.h. 
+  $|g(x) - g(y)| \leq L|x-y|$ f"ur alle $x,y$ in $I$.
+  
+  \textit{
+  Hinweis: Ihr k"onnt ohne Beweis den Mittelwertsatz benutzen: }
+  
+\textit{  F"ur eine differenzierbare}
+  $f:\left[ a, b \right] \to \R$ \textit{existiert ein }$\xi$ in $\left[ a, b \right]$,
+  \textit{so dass}
+  $f(b) - f(a) = f'(\xi)(b-a)$.
+  \item Folgere, dass $g$ eine Selbstabbildung des Intervalls
+  $I=\left[ \alpha - \epsilon , \alpha + \epsilon \right]$ ist.
+  \item Zeige, dass das Newton-Verfahren konvergiert.
+ \end{enumerate}
+
+\end{Aufg}
+
 
 
 \begin{Aufg}
@@ -98,8 +144,20 @@ Ball flach auf das untere Blatt. Jetzt haben wir eine (Selbst)Abbildung eines Bl
 Hat diese Abbildung einen Fixpunkt? Ist diese Abbildung eine Kontraktion?
  
 \end{Aufg}
+
+
 \begin{Aufg}
  
+ Zeige, dass alle Vorraussetzungen des Brouwerschen Fixpunktsatzes gebraucht werden. Finde also 
+ Gegenbeispiele in denen jeweils eine oder mehrere Vorraussetzungen nicht erf"ullt sind.
+ 
+\end{Aufg}
+
+\begin{Aufg}
+ Sei $f: \R \to \R$ eine Abbildung, so dass $f^2$ eine Kontraktion ist. 
+ 
+ Zeige $f$ ist eine Kontraktion, und die Fixpunkte von $f$ und $f^2$ stimmen 
+ "uberein.
  
 \end{Aufg}
 
