@@ -9,6 +9,59 @@
 
 \begin{document}
 
+{\Large \textbf{Aufgaben zu dem Brouwerschen Fixpunktsatz}}
+
+\begin{Aufg}
+Nimm zwei Blatt Papier und lege sie aufeinander. Wir wollen eigentlich eine Selbstabbildung
+eines Blatts auf sich selbst betrachten, doch ist es einfacher dafür ein zweites Blatt herzunehmen.
+Zerknülle nun das oberere Blatt und lege den Papierball wieder auf das andere Blatt. Nun drücke den 
+Ball flach auf das untere Blatt. Jetzt haben wir eine (Selbst)Abbildung eines Blattes auf sich selbst.
+Hat diese Abbildung einen Fixpunkt? Ist diese Abbildung eine Kontraktion?
+ 
+\end{Aufg}
+
+
+
+
+\begin{Aufg}
+ 
+ Zeige, dass alle Vorraussetzungen des Brouwerschen Fixpunktsatzes gebraucht werden. Finde also 
+ Gegenbeispiele in denen jeweils eine oder mehrere Vorraussetzungen nicht erf"ullt sind.
+ 
+\end{Aufg}
+
+\begin{Aufg}
+ 
+ Sei $\Phi:D^2 \to X$ eine stetige bijektive Abbildung mit stetigem Inversen $\Phi^{-1}:X \to D^2$.
+ Das heißt $X$ und $D^2$ sind "uber die Abbildung $\Phi$ mit einander zu identifizieren:
+ Jedem Punkt aus $X$ enspricht genau ein Punkt aus $D^2$.
+ Solche Abbildungen kann man sich als Verformung vorstellen: Die $D^2$ sei aus einem Gummiartigen Stoff
+ den man nun verdrehen und ziehen kann.
+ 
+ Mit Hilfe von $\Phi$ kann nun jede Selbstabbildung von $X$ zu einer Selbstabbildung von $D^2$ machen.
+ 
+ Folgere, dass  jede stetige Selbstabbildung von $X$ einen Fixpunkt hat.
+ Welche geometrischen Figuren $X$ kennt ihr, so dass es eine solche Abbildung gibt.
+ 
+\end{Aufg}
+
+
+\begin{Aufg}
+ Zeige das die Gleichungssysteme
+ \begin{align*}
+  \sin(x+y) - y &=0 \\           
+  \cos(x+y) - x &=0
+ \end{align*}
+ und
+  \begin{align*}
+  \sin(|x-y|) - y &=0 \\           
+  \frac{|x+y|}{2} - x &=0
+ \end{align*}
+eine L"osung in $\R^2$ besitzen.
+\end{Aufg}
+
+
+
 \begin{Aufg}
  In der Vorlesung wurde definiert was ein Abstandmaß oder Metrik ist:
  \begin{enumerate}[(i)]
@@ -63,23 +116,23 @@ Warum ist die Annahme $0<p<1$ wichtig? Würde die Formel in diesen Fällen Sinn 
 \end{Aufg}
 
 
-\begin{Aufg}
- Sei $g:\R \to \R$ beliebig oft differenzierbar mit $g(\alpha) = \alpha$, und
- $|g'(\alpha)| <1$. 
- 
- Zeige, dass es ein $\epsilon > 0$ sodass $g$ das Intervall 
- $I=\left[ \alpha - \epsilon , \alpha + \epsilon \right]$ auf sich selbst abbildet, d.h. 
- $g(x)$ ist ein Element von $I$ falls $x$ ein Element von $I$ war.
- 
- Beweise nun, dass es ein $0<L<1$ gibt, so dass
- \[
-  |g(x) - g(y)| \leq L|x-y|, \text{ f"ur alle } x,y \text{ in } I.
- \]
-
- Folgere nun, dass die Folge $x_{n+1} = g(x_n)$ f"ur $x_0$ in $I$ gegen $\alpha$
- konvergiert.
-
-\end{Aufg}
+% \begin{Aufg}
+%  Sei $g:\R \to \R$ beliebig oft differenzierbar mit $g(\alpha) = \alpha$, und
+%  $|g'(\alpha)| <1$. 
+%  
+%  Zeige, dass es ein $\epsilon > 0$ sodass $g$ das Intervall 
+%  $I=\left[ \alpha - \epsilon , \alpha + \epsilon \right]$ auf sich selbst abbildet, d.h. 
+%  $g(x)$ ist ein Element von $I$ falls $x$ ein Element von $I$ war.
+%  
+%  Beweise nun, dass es ein $0<L<1$ gibt, so dass
+%  \[
+%   |g(x) - g(y)| \leq L|x-y|, \text{ f"ur alle } x,y \text{ in } I.
+%  \]
+% 
+%  Folgere nun, dass die Folge $x_{n+1} = g(x_n)$ f"ur $x_0$ in $I$ gegen $\alpha$
+%  konvergiert.
+% 
+% \end{Aufg}
 
 
 \begin{Aufg}
@@ -92,13 +145,22 @@ Warum ist die Annahme $0<p<1$ wichtig? Würde die Formel in diesen Fällen Sinn 
   $I=\left[ \alpha - \epsilon , \alpha + \epsilon \right]$ ist, d.h. 
   $|g(x) - g(y)| \leq L|x-y|$ f"ur alle $x,y$ in $I$.
   
+  
   \textit{
   Hinweis: Ihr k"onnt ohne Beweis den Mittelwertsatz benutzen: }
   
 \textit{  F"ur eine differenzierbare}
-  $f:\left[ a, b \right] \to \R$ \textit{existiert ein }$\xi$ in $\left[ a, b \right]$,
+  $f:\left[ a, b \right] \to \R$ \textit{existiert ein }$c$ in $\left[ a, b \right]$,
   \textit{so dass}
-  $f(b) - f(a) = f'(\xi)(b-a)$.
+  $f(b) - f(a) = f'(c)(b-a)$.
+  \begin{center}
+ \input{Mittelwert.pdf_tex}
+ 
+ \tiny 
+ https://commons.wikimedia.org/wiki/File:Mean$\_$value$\_$theorem$\_$(Lagrange's$\_$theorem).svg
+\end{center}
+ 
+  
   \item Folgere, dass $g$ eine Selbstabbildung des Intervalls
   $I=\left[ \alpha - \epsilon , \alpha + \epsilon \right]$ ist.
   \item Zeige, dass das Newton-Verfahren konvergiert.
@@ -106,57 +168,40 @@ Warum ist die Annahme $0<p<1$ wichtig? Würde die Formel in diesen Fällen Sinn 
 
 \end{Aufg}
 
+% 
+% 
+% \begin{Aufg}
+% 
+% Nun wollen wir ein Beispiel für eine Fixpunktiteration betrachten, das sogenannte
+% Newton-Verfahren. Sei dazu $f:\R \to \R$
+% eine zweimal stetig differenzierbare Funktion mit einer Nullstelle $\alpha$, also $f(\alpha) =0$,
+% sodass die Ableitung bei $x_0$ nicht gleich 0 ist. Dann definieren wir die iterierte Folge,
+% \[
+%  x_{n+1} = x_n - \frac{f(x_n)}{f'(x_n)}, 
+% \]
+% mit einem Startwert $x_0$. Um die Rechnungen zu vereinfachen, nehmen wir an, dass $x_0$ nahe bei
+% der Nullstelle ist, das heißt $|x_0 - \alpha|<1$. 
+% Weiter können wir $f$ gut durch seine Ableitung annähern:
+% \[
+%  f(a) = f(x_n) + f'(x_n)(a-x_n) + C(a-x_n)^2 \text{ für ein } C \in \R.
+% \]
+% 
+% Um zu beweisen, dass die Folge $x_n$ gegen $\alpha$ konvergiert, betrachte die vorherige
+% Gleichung mit $a = \alpha$. Dann benutze, dass $f'(x_n) \neq0$, und die Definition der
+% Folge $x_n$. Finde damit eine iterative Formel für die Folge des Abstands zu der Nullstelle
+% \[
+%  \epsilon_n \coloneqq \alpha - x_{n}.
+% \]
+% Benutze nun, dass $|x_0 - \alpha|<1$ und damit $\epsilon_n$ gegen 0 konvergiert. Damit konvergiert
+% $x_n$ gegen $\alpha$.
+% 
+% \end{Aufg}
 
 
 \begin{Aufg}
-
-Nun wollen wir ein Beispiel für eine Fixpunktiteration betrachten, das sogenannte
-Newton-Verfahren. Sei dazu $f:\R \to \R$
-eine zweimal stetig differenzierbare Funktion mit einer Nullstelle $\alpha$, also $f(\alpha) =0$,
-sodass die Ableitung bei $x_0$ nicht gleich 0 ist. Dann definieren wir die iterierte Folge,
-\[
- x_{n+1} = x_n - \frac{f(x_n)}{f'(x_n)}, 
-\]
-mit einem Startwert $x_0$. Um die Rechnungen zu vereinfachen, nehmen wir an, dass $x_0$ nahe bei
-der Nullstelle ist, das heißt $|x_0 - \alpha|<1$. 
-Weiter können wir $f$ gut durch seine Ableitung annähern:
-\[
- f(a) = f(x_n) + f'(x_n)(a-x_n) + C(a-x_n)^2 \text{ für ein } C \in \R.
-\]
-
-Um zu beweisen, dass die Folge $x_n$ gegen $\alpha$ konvergiert, betrachte die vorherige
-Gleichung mit $a = \alpha$. Dann benutze, dass $f'(x_n) \neq0$, und die Definition der
-Folge $x_n$. Finde damit eine iterative Formel für die Folge des Abstands zu der Nullstelle
-\[
- \epsilon_n \coloneqq \alpha - x_{n}.
-\]
-Benutze nun, dass $|x_0 - \alpha|<1$ und damit $\epsilon_n$ gegen 0 konvergiert. Damit konvergiert
-$x_n$ gegen $\alpha$.
-
-\end{Aufg}
-
-
-\begin{Aufg}
-Nimm zwei Blatt Papier und lege sie aufeinander. Wir wollen eigentlich eine Selbstabbildung
-eines Blatts auf sich selbst betrachten, doch ist es einfacher dafür ein zweites Blatt herzunehmen.
-Zerknülle nun das oberere Blatt und lege den Papierball wieder auf das andere Blatt. Nun drücke den 
-Ball flach auf das untere Blatt. Jetzt haben wir eine (Selbst)Abbildung eines Blattes auf sich selbst.
-Hat diese Abbildung einen Fixpunkt? Ist diese Abbildung eine Kontraktion?
+ Sei $f: \R \to \R$ eine Abbildung, so dass $f\circ f$ eine Kontraktion ist. 
  
-\end{Aufg}
-
-
-\begin{Aufg}
- 
- Zeige, dass alle Vorraussetzungen des Brouwerschen Fixpunktsatzes gebraucht werden. Finde also 
- Gegenbeispiele in denen jeweils eine oder mehrere Vorraussetzungen nicht erf"ullt sind.
- 
-\end{Aufg}
-
-\begin{Aufg}
- Sei $f: \R \to \R$ eine Abbildung, so dass $f^2$ eine Kontraktion ist. 
- 
- Zeige $f$ ist eine Kontraktion, und die Fixpunkte von $f$ und $f^2$ stimmen 
+ Zeige $f$ ist eine Kontraktion, und die Fixpunkte von $f$ und $f \circ f$ stimmen 
  "uberein.
  
 \end{Aufg}
