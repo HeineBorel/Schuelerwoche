@@ -8,17 +8,12 @@
 
 
 \begin{document}
-
+\begin{center}
 {\Large \textbf{Aufgaben zu dem Brouwerschen Fixpunktsatz}}
-
-\begin{Aufg}
-Nimm zwei Blatt Papier und lege sie aufeinander. Wir wollen eigentlich eine Selbstabbildung
-eines Blatts auf sich selbst betrachten, doch ist es einfacher dafür ein zweites Blatt herzunehmen.
-Zerknülle nun das oberere Blatt und lege den Papierball wieder auf das andere Blatt. Nun drücke den 
-Ball flach auf das untere Blatt. Jetzt haben wir eine (Selbst)Abbildung eines Blattes auf sich selbst.
-Hat diese Abbildung einen Fixpunkt? Ist diese Abbildung eine Kontraktion?
  
-\end{Aufg}
+\end{center}
+
+
 
 
 
@@ -29,6 +24,16 @@ Hat diese Abbildung einen Fixpunkt? Ist diese Abbildung eine Kontraktion?
  Gegenbeispiele in denen jeweils eine oder mehrere Vorraussetzungen nicht erf"ullt sind.
  
 \end{Aufg}
+
+\begin{proof}\leavevmode
+ \begin{enumerate}
+  \item Stetigkeit: Drehung + einen Punkt mit dem Mittelpunkt vertauschen
+  \item Zusammenhang der zugrunde liegenden Menge (also nicht $D^2$): Zwei $D^2$ wobei
+  die Abbildung einfach die Mengen vertauscht
+ \end{enumerate}
+
+\end{proof}
+
 
 \begin{Aufg}
  
@@ -41,9 +46,39 @@ Hat diese Abbildung einen Fixpunkt? Ist diese Abbildung eine Kontraktion?
  Mit Hilfe von $\Phi$ kann nun jede Selbstabbildung von $X$ zu einer Selbstabbildung von $D^2$ machen.
  
  Folgere, dass  jede stetige Selbstabbildung von $X$ einen Fixpunkt hat.
- Welche geometrischen Figuren $X$ kennt ihr, so dass es eine solche Abbildung gibt.
+ Welche geometrischen Figuren $X$ kennt ihr, so dass es eine solche Abbildung gibt. Hier reichen
+ Bilder zu den Abbildungen. Ihr m"usst keine expliziten Abbildungen angeben.
  
 \end{Aufg}
+
+\begin{proof}
+ Falls $f$ eine Selbstabbildung von $X$ ist, so ist $\Phi\inv \circ f \circ \Phi$ eine Selbstabbildung
+ von $D^2$, hat also nach dem Browerschen Fixpunktsatz einen Fixpunkt
+ $  \Phi\inv \circ f \circ \Phi(x) = x $, was "aquivalent zu $ f( \Phi (x)) = \Phi(x)$. 
+ Damit ist $\Phi(x)$ der gesuchte Fixpunkt.
+ 
+ Die geometrischen Figuren sind alle regul"aren Polygone, also Dreick, Viereck etc. Hier reichen 
+ Bilder der Abbildungen.
+\end{proof}
+
+
+
+\begin{Aufg}
+Nimm zwei Blatt Papier und lege sie aufeinander. Wir wollen eigentlich eine Selbstabbildung
+eines Blatts auf sich selbst betrachten, doch ist es einfacher dafür ein zweites Blatt herzunehmen.
+Zerknülle nun das oberere Blatt und lege den Papierball wieder auf das andere Blatt. Nun drücke den 
+Ball flach auf das untere Blatt. Jetzt haben wir eine (Selbst)Abbildung eines Blattes auf sich selbst.
+Hat diese Abbildung einen Fixpunkt? Ist diese Abbildung eine Kontraktion?
+ 
+\end{Aufg}
+\begin{proof}
+ Die Abbildung ist stetig, da man beim Zerknüllen das Papier nicht zerreisst.  Damit ist kann man 
+ Aufgabe 2 benutzen, und folgern, dass die Abbildung einen Fixpunkt hat. 
+ 
+ Die Abbildung ist keine Kontraktion, da zum Beispiel ein nicht zerknülltes Blatt, also die Identit"at 
+ keine Kontraktion ist. Desweiteren ist das zerknüllen lokal die Identit"at, also keine Kontraktion.
+ 
+\end{proof}
 
 
 \begin{Aufg}
@@ -55,10 +90,17 @@ Hat diese Abbildung einen Fixpunkt? Ist diese Abbildung eine Kontraktion?
  und
   \begin{align*}
   \sin(|x-y|) - y &=0 \\           
-  \frac{|x+y|}{2} - x &=0
+  \frac{|x+y|}{4} - x &=0
  \end{align*}
 eine L"osung in $\R^2$ besitzen.
 \end{Aufg}
+
+\begin{proof}
+ 
+$(x,y)\mapsto (\cos(x+y),\sin(x+y))$ und $(x,y)\mapsto (\frac{|x+y|}{2},\sin(|x-y|))$ k"onnen
+auf Selbstabbildungen von $D^2$ auf sich selbst eingeschr"ankt werden. Damit kann man den
+Brouwerschen Fixpunktsatz anwenden.
+\end{proof}
 
 
 
@@ -91,10 +133,37 @@ eine L"osung in $\R^2$ besitzen.
 
 \end{Aufg}
  
+\begin{proof}
+ Einfaches nachpr"ufen der Axiome. Dreicksungleichung darf/sollte benutzt werden.
+ 
+\end{proof}
+
+ 
 \begin{Aufg}
 Sei $d(x,y)$ ein Abstandmaß auf einer Menge $X$. Zeige, dass die Abbildung
- $(x,y) \mapsto \frac{d(x,y)}{1 + d(x,y)}$ ein Abstandmaß ist.
+ $(x,y) \mapsto \frac{d(x,y)}{1 + d(x,y)}$ ein Abstandmaß ist. (Dreicksungleichung ist schwierig)
 \end{Aufg}
+\begin{proof}
+ Nenne die neue Abbildung $g$
+ \begin{enumerate}
+  \item $g(x,y)= \frac{d(x,y)}{1 + d(x,y)} \geq 0$ da $d(x,y) \geq 0$. Falls $g(x,y) =0$,
+  so muss schon $d(x,y)=0$ sein, da $1+d(x,y) >0$.
+  \item folgt aus Symmetrie von $d(x,y)$
+  \item \begin{align*}
+ g(x,z)
+ &= \frac{d(x,z)}{d(x,z)+1}
+ = 1 - \frac{1}{d(x,z)+1}
+ \leq 1 - \frac{1}{d(x,y)+d(y,z)+1} \\
+ &= \frac{d(x,y)+d(y,z)}{1+d(x,y)+d(y,z)}
+ = \frac{d(x,y)}{1+d(x,y)+d(y,z)} + \frac{d(y,z)}{1+d(x,y)+d(y,z)}\\
+ &\leq \frac{d(x,y)}{1+d(x,y)} + \frac{d(y,z)}{1+d(y,z)}
+ = g(x,y) + g(y,z)
+\end{align*}
+ \end{enumerate}
+
+ 
+\end{proof}
+
 
 
 \begin{Aufg}
@@ -115,6 +184,16 @@ gegen $\frac{1}{1 - p}$, also $\sum_{k=0}^\infty p^k=  \frac{1}{1 - p}$.
 Warum ist die Annahme $0<p<1$ wichtig? Würde die Formel in diesen Fällen Sinn ergeben?
 \end{Aufg}
 
+\begin{proof}
+
+$s -ps = s(1-p) = 1 + p + p^2 + p^3 + \dots + p^N - (p +p^2 +p^3 + p^4 + \dots + p^{N+1})
+= 1 - p^{N+1}$. Daraus folgt $\sum_{k=0}^N p^k = s = \frac{1 - p^{N+1}}{1-p}$. F"ur $p<0$ 
+bekommt man eine alternierende Reihe, jedenfalls f"ur $0<|p|<1$. F"ur $p=0$ bekommt man
+das Problem, wie $0^0$ definiert ist. F"ur $p=1$ teilt man durch 0. F"ur $1<p$ konvergiert die Reihe 
+nicht.
+ 
+\end{proof}
+
 
 % \begin{Aufg}
 %  Sei $g:\R \to \R$ beliebig oft differenzierbar mit $g(\alpha) = \alpha$, und
@@ -133,6 +212,26 @@ Warum ist die Annahme $0<p<1$ wichtig? Würde die Formel in diesen Fällen Sinn 
 %  konvergiert.
 % 
 % \end{Aufg}
+
+
+\begin{Aufg}
+ Sei $f: \R \to \R$ eine Abbildung, so dass $g(x) \coloneqq f(f(x))$ eine Kontraktion ist. 
+ 
+ Zeige $f$ hat genau einen Fixpunkt, und der Fixpunkt von $f(x)$ stimmt mit dem von $f(f(x))$
+ "uberein.
+ 
+\end{Aufg}
+
+\begin{proof}
+ Die Abbildung $g$ ist eine Kontraktion, hat also einen eindeutigen Fixpunkt.
+ Ist $\alpha$ ein Fixpunkt von $g$, so ist 
+ $ g(f(\alpha)) = f(f(f(\alpha))) = f(g(\alpha))= f(\alpha).$ Da der Fixpunkt von $g$ eindeutig ist,
+ ist $\alpha = f(\alpha)$, also auch ein Fixpunkt von $f$. Insbesondere hat $f$ also einen Fixpunkt.
+ 
+ Falls $\alpha$ ein Fixpunkt von $f$ ist, so ist er automatisch ein Fixpunkt von $g$, und damit 
+ eindeutig.
+\end{proof}
+
 
 
 \begin{Aufg}
@@ -168,6 +267,45 @@ Warum ist die Annahme $0<p<1$ wichtig? Würde die Formel in diesen Fällen Sinn 
 
 \end{Aufg}
 
+\begin{proof}\leavevmode
+ \begin{enumerate}[(a)]
+  \item Ist klar.
+  \item Sei $\epsilon>0$ so klein, dass $f'$ auf $\left[ \alpha - \epsilon, \alpha + \epsilon \right]$
+   keine Nullstelle hat,  
+   \begin{gather*}
+   c_\epsilon \coloneqq \max_{x \in \left[\alpha -\epsilon, \alpha +\epsilon \right]} \{ 1, |f(x)| \}, \\
+   c' \coloneqq \min_{x \in \left[\alpha - \epsilon, \alpha +\epsilon \right]}\{ 1, |f'(x)| \},\\ 
+   c'' \coloneqq \max_{x \in \left[\alpha -\epsilon, \alpha +\epsilon \right]} \{ 1, |f''(x)| \} ,\\
+   g'(x)  = 1- \frac{f'(x)f'(x)- f(x)f''(x)}{(f'(x))^2} = \frac{f(x)f''(x)}{(f'(x))^2} 
+   \end{gather*}
+  Es folgt, dass $g'(\alpha) = 0$, und 
+  $|g'(x)| \leq  \frac{c_\epsilon c''}{c'^2}$. Da $f(\alpha)=0$ ist $\lim_{\epsilon
+  \to 0} c_\epsilon = 0$. W"ahle nun ein $\delta > 0$, so dass $\frac{c_\delta c''}{c'} \eqqcolon L <1$.
+  
+  Definiere $a\coloneqq \alpha - \delta, b \coloneqq \alpha + \delta$. Mit dem Mittelwertsatz folgt nun 
+  f"ur $x, y$ in $\left[a, b\right]$
+  \begin{gather*}
+   g(x) - g(y) = g'(c)(x-y), \text{ mit } c \text{ in } \left[a, b\right]. \\
+   \Rightarrow|g(x) - g(y)| < L(x-y)
+  \end{gather*}
+
+  \item F"ur $x \in \left[a, b\right]$ gilt nun
+  \begin{gather*}
+   |\alpha- g(x)| = |g(\alpha) - g(x)| < L(\alpha - x) \leq L \cdot \delta < \delta,
+  \end{gather*}
+  also $g(x) \in \left[a, b\right]$.
+  
+  \item Das Newton Verfahren erf``ullt die Vorraussetzungen von Aufgabe 9. Der Beweis
+  der Konvergenz der 
+  Folge $x_{n+1} \coloneqq f(x_n)$, f"ur $x_0 \in \left[a, b\right]$ beliebig, ist der
+  gleiche wie im Beweis des Banachschen Fixpunksatzes.
+
+ \end{enumerate}
+
+\end{proof}
+
+
+
 % 
 % 
 % \begin{Aufg}
@@ -197,14 +335,6 @@ Warum ist die Annahme $0<p<1$ wichtig? Würde die Formel in diesen Fällen Sinn 
 % 
 % \end{Aufg}
 
-
-\begin{Aufg}
- Sei $f: \R \to \R$ eine Abbildung, so dass $f\circ f$ eine Kontraktion ist. 
- 
- Zeige $f$ ist eine Kontraktion, und die Fixpunkte von $f$ und $f \circ f$ stimmen 
- "uberein.
- 
-\end{Aufg}
 
 \end{document}
 
